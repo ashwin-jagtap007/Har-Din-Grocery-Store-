@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Har Din Grocery Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      text-align: center;
+      margin: 1rem;
+    }
+
+    .category {
+      margin: 2rem;
+    }
+
+    .category h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .product {
+      background: white;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 350px;
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+    }
+
+    .product h2, .product p {
+      margin: 0.5rem 0;
+    }
+
+    .product button {
+      margin-top: auto;
+    }
+
+    button {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #218838;
+    }
+
+    .cart {
+      background: #fff;
+      padding: 2rem;
+      margin: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Har Din Grocery Store</h1>
+  </header>
+
+  <div style="text-align:center; margin: 1rem;">
+    <input type="text" id="search" placeholder="Search products..." onkeyup="filterProducts()" />
+  </div>
+
+  <nav>
+    <a href="#vegetables">Vegetables</a> |
+    <a href="#fruits">Fruits</a>
+  </nav>
+
+  <!-- Vegetables Section -->
+  <section id="vegetables" class="category">
+    <h2>Vegetables</h2>
+    <div class="products">
+      <div class="product"><img src="carrot.jpg" alt="Carrot"><h2>Carrot</h2><p>$6.00</p><button onclick="addToCart('Carrot', 6)">Add to Cart</button></div>
+      <div class="product"><img src="onion.jpg" alt="Onion"><h2>Onion</h2><p>$5.00</p><button onclick="addToCart('Onion', 5)">Add to Cart</button></div>
+      <div class="product"><img src="tamato2.jpg" alt="Tomato"><h2>Tomato</h2><p>$4.00</p><button onclick="addToCart('Tomato', 4)">Add to Cart</button></div>
+      <div class="product"><img src="palk.jpg" alt="Spinach"><h2>Spinach</h2><p>$3.00</p><button onclick="addToCart('Spinach', 3)">Add to Cart</button></div>
+      <div class="product"><img src="cabage.jpg" alt="Cabbage"><h2>Cabbage</h2><p>$4.50</p><button onclick="addToCart('Cabbage', 4.5)">Add to Cart</button></div>
+      <div class="product"><img src="broooo.jpg" alt="Broccoli"><h2>Broccoli</h2><p>$7.00</p><button onclick="addToCart('Broccoli', 7)">Add to Cart</button></div>
+      <div class="product"><img src="pumking.jpg" alt="Pumpkin"><h2>Pumpkin</h2><p>$6.50</p><button onclick="addToCart('Pumpkin', 6.5)">Add to Cart</button></div>
+      <div class="product"><img src="sweetcorn.jpg" alt="Sweet Corn"><h2>Sweet Corn</h2><p>$5.00</p><button onclick="addToCart('Sweet Corn', 5)">Add to Cart</button></div>
+      <div class="product"><img src="beetroot.jpg" alt="Beetroot"><h2>Beetroot</h2><p>$4.00</p><button onclick="addToCart('Beetroot', 4)">Add to Cart</button></div>
+      <div class="product"><img src="peas.jpg" alt="Green Peas"><h2>Green Peas</h2><p>$3.50</p><button onclick="addToCart('Green Peas', 3.5)">Add to Cart</button></div>
+      <div class="product"><img src="eggplant.jpg" alt="eggplant"><h2>EggPlant</h2><p>$7.50</p><button onclick="addToCart('EggPlant', 7.5)">Add to Cart</button></div>
+      <div class="product"><img src="ladyfinger.jpg" alt="ladyfinger"><h2>ladyfinger</h2><p>$8.50</p><button onclick="addToCart('ladyfinger', 8.5)">Add to Cart</button></div>
+   
+    </div>
+  </section>
+
+  <!-- Fruits Section -->
+  <section id="fruits" class="category">
+    <h2>Fruits</h2>
+    <div class="products">
+      <div class="product"><img src="apple.jpg" alt="Apple"><h2>Apple</h2><p>$8.00</p><button onclick="addToCart('Apple', 8)">Add to Cart</button></div>
+      <div class="product"><img src="babnan.jpg" alt="Banana"><h2>Banana</h2><p>$5.00</p><button onclick="addToCart('Banana', 5)">Add to Cart</button></div>
+      <div class="product"><img src="mango.jpg" alt="Mango"><h2>Mango</h2><p>$12.00</p><button onclick="addToCart('Mango', 12)">Add to Cart</button></div>
+      <div class="product"><img src="orange.jpg" alt="Orange"><h2>Orange</h2><p>$6.00</p><button onclick="addToCart('Orange', 6)">Add to Cart</button></div>
+      <div class="product"><img src="garafas.jpg" alt="Grapes"><h2>Grapes</h2><p>$7.00</p><button onclick="addToCart('Grapes', 7)">Add to Cart</button></div>
+      <div class="product"><img src="pineapple.jpg" alt="Pineapple"><h2>Pineapple</h2><p>$10.00</p><button onclick="addToCart('Pineapple', 10)">Add to Cart</button></div>
+      <div class="product"><img src="papay.jpg" alt="Papaya"><h2>Papaya</h2><p>$9.00</p><button onclick="addToCart('Papaya', 9)">Add to Cart</button></div>
+      <div class="product"><img src="watermalon.jpg" alt="Watermelon"><h2>Watermelon</h2><p>$11.00</p><button onclick="addToCart('Watermelon', 11)">Add to Cart</button></div>
+      <div class="product"><img src="kivi.jpg" alt="Kiwi"><h2>Kiwi</h2><p>$6.50</p><button onclick="addToCart('Kiwi', 6.5)">Add to Cart</button></div>
+      <div class="product"><img src="stabry.jpg" alt="Strawberry"><h2>Strawberry</h2><p>$8.50</p><button onclick="addToCart('Strawberry', 8.5)">Add to Cart</button></div>
+      <div class="product"><img src="green apple.jpg" alt="Grren Apple"><h2>Green apple</h2><p>$9.50</p><button onclick="addToCart('Green apple', 9.5)">Add to Cart</button></div>
+     <div class="product"><img src="dargon.jpg" alt="Dragon Fruit"><h2>Dragon Fruit</h2><p>$12.50</p><button onclick="addToCart('Dragon Fruit', 12.5)">Add to Cart</button></div>
+   
+    </div>
+  </section>
+
+  <section class="cart">
+    <h2>Shopping Cart</h2>
+    <ul id="cart-items"></ul>
+    <p>Total: $<span id="total">0</span></p>
+    <p>Items: <span id="item-count">0</span></p>
+    <button onclick="showCheckout()">Proceed to Checkout</button>
+
+  </section>
+
+  <section id="checkout" style="display:none; background:#fff; padding:2rem; margin:2rem;">
+  <h2>Checkout</h2>
+  <form onsubmit="submitOrder(event)">
+    <label for="name">Full Name:</label><br>
+    <input type="text" id="name" required><br><br>
+
+    <label for="mobile">Mobile Number:</label><br>
+    <input type="tel" id="mobile" pattern="[0-9]{10}" required><br><br>
+
+    <label for="address">Address:</label><br>
+    <textarea id="address" rows="3" required></textarea><br><br>
+
+    <label for="pincode">Pincode:</label><br>
+    <input type="text" id="pincode" pattern="[0-9]{6}" required><br><br>
+
+    <button type="submit">Place Order</button>
+  </form>
+</section>
+
+
+  <script>
+let cart = [];
+let total = 0;
+
+// Add item to cart
+function addToCart(name, price, qtyId) {
+  const qty = qtyId ? parseInt(document.getElementById(qtyId).value) : 1;
+  for (let i = 0; i < qty; i++) {
+    cart.push({ name, price });
+    total += price;
+  }
+  updateCart();
+}
+
+// Remove item from cart
+function removeFromCart(index) {
+  total -= cart[index].price;
+  cart.splice(index, 1);
+  updateCart();
+}
+
+// Update cart display
+function updateCart() {
+  const cartItems = document.getElementById('cart-items');
+  cartItems.innerHTML = '';
+
+  cart.forEach((item, index) => {
+    const li = document.createElement('li');
+    li.textContent = `${item.name} - $${item.price}`;
+
+    const removeBtn = document.createElement('button');
+    removeBtn.textContent = 'Remove';
+    removeBtn.style.marginLeft = '10px';
+    removeBtn.style.background = '#dc3545';
+    removeBtn.style.color = 'white';
+    removeBtn.style.border = 'none';
+    removeBtn.style.padding = '0.3rem 0.6rem';
+    removeBtn.style.cursor = 'pointer';
+
+    removeBtn.onclick = () => removeFromCart(index);
+    li.appendChild(removeBtn);
+    cartItems.appendChild(li);
+  });
+
+  document.getElementById('total').textContent = total.toFixed(2);
+  document.getElementById('item-count').textContent = cart.length;
+}
+
+// Filter products by search input
+function filterProducts() {
+  const query = document.getElementById('search').value.toLowerCase();
+  const products = document.querySelectorAll('.product');
+  products.forEach(product => {
+    const name = product.querySelector('h2').textContent.toLowerCase();
+    product.style.display = name.includes(query) ? 'block' : 'none';
+  });
+}
+function showCheckout() {
+  document.getElementById('checkout').style.display = 'block';
+  window.scrollTo({ top: document.getElementById('checkout').offsetTop, behavior: 'smooth' });
+}
+
+function submitOrder(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const mobile = document.getElementById('mobile').value;
+  const address = document.getElementById('address').value;
+  const pincode = document.getElementById('pincode').value;
+
+  fetch('http://localhost:3000/checkout', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, mobile, address, pincode, cart })
+  })
+  .then(res => res.json())
+  .then(data => {
+    alert(data.message);
+    cart = [];
+    total = 0;
+    updateCart();
+    document.getElementById('checkout').style.display = 'none';
+  });
+}
+
+
+</script>
