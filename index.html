@@ -241,7 +241,7 @@ function submitOrder(event) {
   const address = document.getElementById('address').value;
   const pincode = document.getElementById('pincode').value;
 
-  fetch('https://ashwin-jagtap007.github.io/Har-Din-Grocery-Store-/', {
+  fetch(' http://localhost:3000/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, mobile, address, pincode, cart })
@@ -259,3 +259,4 @@ function submitOrder(event) {
 
 
 </script>
+
