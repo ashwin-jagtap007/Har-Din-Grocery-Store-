@@ -21,5 +21,6 @@ app.post('/checkout', (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on https://ashwin-jagtap007.github.io/Har-Din-Grocery-Store-/:${PORT}`);
 });
+
