@@ -3,19 +3,23 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
+const PORT = 3000;
+
 app.use(cors());
 app.use(bodyParser.json());
 
+// Endpoint to handle checkout
 app.post('/checkout', (req, res) => {
-  const { name, mobile, address, pincode, cart } = req.body;
+    const { name, mobile, address, pincode, cart } = req.body;
 
-  console.log('New Order:', { name, mobile, address, pincode, cart });
+    // Here you can add logic to save the order to a database
+    console.log('Order received:', { name, mobile, address, pincode, cart });
 
-  // You can save this to a database here
-
-  res.json({ message: `Order received for ${name}` });
+    // Send a response back to the client
+    res.json({ message: 'Order placed successfully!' });
 });
 
-app.listen(3000, () => {
-  console.log('Server running on http://localhost:3000');
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
